@@ -69,7 +69,9 @@ def add_entry():
     website = input("Enter website name: ").strip()
     username = input("Enter your username/email: ").strip()
     #assigns the variables in save_credentials with user input, also strips any additional 
-    numlength = int(input("Enter length you would like your password: "))
+    numlength = int(input("Enter length you would like your password (minimum 12): "))
+    while numlength < 12:
+        numlength = int(input("Enter a length of 12 or greater: "))
     password = generate_password(numlength)
     #calls to the generate password function to randomly generate a password
     print(f"\nGenerated Password: {password}")
